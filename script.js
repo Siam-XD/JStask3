@@ -1,25 +1,27 @@
-let body = document.getElementById("body");
-let header = document.getElementById("header");
-let parent = document.getElementById("parent")
-let list = document.getElementsByClassName("itemList")
+let passInput = document.getElementById("input");
+let btn = document.getElementById("btn");
+let eye = document.getElementById("eye")
+let body = document.querySelector("body")
+let commentInput = document.getElementById("commentInput")
+let addComment = document.getElementById("addComment")
 
-// body
-body.style.backgroundColor = "#ffe3ba"
-body.style.display = "flex"
-body.style.flexDirection = "column"
-body.style.alignItems = "center"
+passInput.style.height = "30px"
+passInput.style.margin = "10px"
+eye.addEventListener("click", () => {
+    if(passInput.type === "password"){
+        passInput.type = "text";
+        eye.classList.remove("fa-eye")
+        eye.classList.add("fa-eye-slash")
+    } else {
+        passInput.type = "password";
+        eye.classList.remove("fa-eye-slash")
+        eye.classList.add("fa-eye")
+    }
+})
 
-// header
-header.style.backgroundColor = "#c94732"
-header.style.textAlign = "center"
-header.style.padding = "1px 0"
-header.style.width = "60%"
-header.style.color = "white"
-
-// section
-parent.style.display = "flex"
-parent.style.flexWrap = "wrap"
-
-// list
-list.style.backgroundColor = "white"
-list.style.width = "30%"
+addComment.addEventListener("click", () => {
+    let comment = document.createElement("h5")
+    comment.innerText = commentInput.value;
+    commentInput.value = ""
+    body.appendChild(comment)
+})
