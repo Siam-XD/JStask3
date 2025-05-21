@@ -1,5 +1,4 @@
-let passInput = document.getElementById("input");
-let btn = document.getElementById("btn");
+let passInput = document.getElementById("input")
 let eye = document.getElementById("eye")
 let body = document.querySelector("body")
 let commentInput = document.getElementById("commentInput")
